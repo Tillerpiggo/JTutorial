@@ -11,6 +11,10 @@
 		0245052C29C6E1A100B532A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245052B29C6E1A100B532A0 /* ContentView.swift */; };
 		0245052E29C6E1A200B532A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0245052D29C6E1A200B532A0 /* Assets.xcassets */; };
 		0245053129C6E1A200B532A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0245053029C6E1A200B532A0 /* Preview Assets.xcassets */; };
+		0245053829C6E57400B532A0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245053729C6E57400B532A0 /* Grid.swift */; };
+		0245053A29C6E5A000B532A0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245053929C6E5A000B532A0 /* Tile.swift */; };
+		0245053C29C84DC200B532A0 /* GridLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245053B29C84DC200B532A0 /* GridLabel.swift */; };
+		0245053E29C8528500B532A0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245053D29C8528500B532A0 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		0245052B29C6E1A100B532A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0245052D29C6E1A200B532A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0245053029C6E1A200B532A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0245053729C6E57400B532A0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		0245053929C6E5A000B532A0 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		0245053B29C84DC200B532A0 /* GridLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLabel.swift; sourceTree = "<group>"; };
+		0245053D29C8528500B532A0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				0245052929C6E1A100B532A0 /* JTutorialApp.swift */,
 				0245052B29C6E1A100B532A0 /* ContentView.swift */,
+				0245053729C6E57400B532A0 /* Grid.swift */,
+				0245053B29C84DC200B532A0 /* GridLabel.swift */,
+				0245053929C6E5A000B532A0 /* Tile.swift */,
+				0245053D29C8528500B532A0 /* Game.swift */,
 				0245052D29C6E1A200B532A0 /* Assets.xcassets */,
 				0245052F29C6E1A200B532A0 /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0245053C29C84DC200B532A0 /* GridLabel.swift in Sources */,
+				0245053E29C8528500B532A0 /* Game.swift in Sources */,
 				0245052C29C6E1A100B532A0 /* ContentView.swift in Sources */,
 				0245052A29C6E1A100B532A0 /* JTutorialApp.swift in Sources */,
+				0245053829C6E57400B532A0 /* Grid.swift in Sources */,
+				0245053A29C6E5A000B532A0 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,4 +41,10 @@ class Game: ObservableObject {
         coins = 0
         state = .ongoing
     }
+    
+    func reset() {
+        grid = Grid()
+        coins = 0
+        state = .ongoing
+    }
 }

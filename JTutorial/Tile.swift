@@ -16,7 +16,11 @@ struct Tile {
         state = state.opposite
     }
     
-    // In class enums
+    // Returns a random, unflipped tile
+    static func random() -> Tile {
+        return Tile(state: .notFlipped, value: Tile.Value.random())
+    }
+    
     enum State {
         case flipped
         case notFlipped
@@ -34,6 +38,7 @@ struct Tile {
     enum Value: Int {
         case voltorb, one, two, three
         
+        // THIS is necessary for calculating the total points in a row/column
         var intValue: Int {
             switch self {
             case .voltorb:
@@ -56,11 +61,6 @@ struct Tile {
         static func random() -> Value {
             return Value(rawValue: Int.random(in: 0..<4)) ?? .voltorb
         }
-    }
-    
-    // Returns a random, unflipped tile
-    static func random() -> Tile {
-        return Tile(state: .notFlipped, value: Tile.Value.random())
     }
 }
 

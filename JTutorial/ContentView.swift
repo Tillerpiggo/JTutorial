@@ -73,8 +73,10 @@ struct ContentView: View {
     var stateText: String {
         switch game.state {
         case .lost:
+            //game.flipAllTiles()
             return "You lost!"
         case .won:
+            //game.flipAllTiles()
             return "You won!"
         case .ongoing:
             return "You're playing Voltorb Flip."

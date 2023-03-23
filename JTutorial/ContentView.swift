@@ -160,28 +160,44 @@ struct TileView: View {
         }
     }
     
-    var tileColor: Color {
-        if tile.state == .notFlipped {
-            return .blue
-        }
-        
-        return tile.value == .voltorb ? .red : .indigo
+    var tileBackColor: Color {
+        tile.value == .voltorb ? .red : .indigo
     }
     
-    var degree: Double {
-        tile.state == .flipped ? 180 : 0
+    let durationAndDelay : CGFloat = 0.1
+    let cornerRadius: CGFloat = 4
+    var frontDegree: Double { tile.state == .flipped ? 90 : 0 }
+    var backDegree: Double { tile.state == .flipped ? 0 : -90 }
+    
+    
+    var front: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .frame(width: 50, height: 50)
+                .foregroundColor(.blue)
+        }
+        .rotation3DEffect(Angle(degrees: frontDegree), axis: (x: 0, y: 1, z: 0))
+        .animation(.easeInOut(duration: durationAndDelay).delay(tile.state == .flipped ? 0 : durationAndDelay), value: frontDegree)
+    }
+    
+    var back: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .frame(width: 50, height: 50)
+                .foregroundColor(tileBackColor)
+            Text(tileText)
+                .frame(width: 20, height: 20)
+        }
+        .rotation3DEffect(Angle(degrees: backDegree), axis: (x: 0, y: 1, z: 0))
+        .animation(.easeInOut(duration: durationAndDelay).delay(tile.state == .notFlipped ? 0 : durationAndDelay), value: backDegree)
+        
     }
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .frame(width: 50, height: 50)
-                .foregroundColor(tileColor)
-            if tile.state == .flipped {
-                Text(tileText)
-                    .frame(width: 20, height: 20)
-            }
-        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
+            back
+            front
+        }
     }
 }
 

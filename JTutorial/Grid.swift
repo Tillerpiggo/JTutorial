@@ -66,6 +66,15 @@ struct Grid {
         return tiles[row][col].value
     }
     
+    // Flips all tiles in the grid that aren't already flipped
+    mutating func flipAllTiles() {
+        for row in 0..<rowCount {
+            for col in 0..<colCount {
+                _ = flipTileAt(row: row, col: col)
+            }
+        }
+    }
+    
     subscript(index: Int) -> [Tile] {
         get {
             return tiles[index]

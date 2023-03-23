@@ -18,6 +18,9 @@ class Game: ObservableObject {
         if flippedValue == .voltorb {
             state = .lost
             grid.flipAllTiles()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.reset()
+            }
         } else {
             if coins == 0 {
                 coins += flippedValue.intValue
@@ -28,6 +31,9 @@ class Game: ObservableObject {
             if coins == grid.maxScore {
                 state = .won
                 grid.flipAllTiles()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.reset()
+                }
             }
         }
         

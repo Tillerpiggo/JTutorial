@@ -38,7 +38,7 @@ struct Tile {
     enum Value: Int {
         case voltorb, one, two, three
         
-        // THIS is necessary for calculating the total points in a row/column
+        // This is necessary for calculating the total points in a row/column
         var intValue: Int {
             switch self {
             case .voltorb:

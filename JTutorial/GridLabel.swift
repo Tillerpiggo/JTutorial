@@ -11,6 +11,7 @@ struct GridLabel {
     var voltorbCount: Int
     var totalValue: Int
     
+    // Sets voltorbCount and totalValue based on the given row/column
     init(tiles: [Tile]) {
         voltorbCount = tiles.reduce(0) { $0 + ($1.value == .voltorb ? 1 : 0) }
         totalValue = tiles.reduce(0) { $0 + $1.value.intValue }

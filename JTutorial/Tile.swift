@@ -9,16 +9,16 @@ import Foundation
 
 struct Tile {
     
+    // Returns a random, unflipped tile
+    static func random() -> Tile {
+        return Tile(state: .notFlipped, value: Tile.Value.random())
+    }
+    
     var state: State
     var value: Value
     
     mutating func flip() {
         state = state.opposite
-    }
-    
-    // Returns a random, unflipped tile
-    static func random() -> Tile {
-        return Tile(state: .notFlipped, value: Tile.Value.random())
     }
     
     enum State {

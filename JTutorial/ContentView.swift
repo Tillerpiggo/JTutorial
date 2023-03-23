@@ -60,6 +60,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("Score: \(game.coins)")
             GridView(game.grid) { rowTapped, colTapped in
                 game.flipTileAt(row: rowTapped, col: colTapped)
             }

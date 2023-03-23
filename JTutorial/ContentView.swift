@@ -73,10 +73,8 @@ struct ContentView: View {
     var stateText: String {
         switch game.state {
         case .lost:
-            //game.flipAllTiles()
             return "You lost!"
         case .won:
-            //game.flipAllTiles()
             return "You won!"
         case .ongoing:
             return "You're playing Voltorb Flip."
@@ -169,6 +167,10 @@ struct TileView: View {
         return tile.value == .voltorb ? .red : .indigo
     }
     
+    var degree: Double {
+        tile.state == .flipped ? 180 : 0
+    }
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -178,7 +180,7 @@ struct TileView: View {
                 Text(tileText)
                     .frame(width: 20, height: 20)
             }
-        }
+        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
 }
 
